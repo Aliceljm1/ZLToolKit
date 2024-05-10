@@ -63,6 +63,7 @@ int main() {
 
     TcpServer::Ptr server(new TcpServer());
     server->start<EchoSession>(9000);//监听9000端口
+    server->start<EchoSession>(9002);//监听9002端口,  一个tcpserver支持多个session
 
     TcpServer::Ptr serverSSL(new TcpServer());
     serverSSL->start<SessionWithSSL<EchoSession> >(9001);//监听9001端口

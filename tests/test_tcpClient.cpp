@@ -44,6 +44,7 @@ protected:
     virtual void onManager() override{
         //定时发送数据到服务器
         auto buf = BufferRaw::create();
+
         if(buf){
             buf->assign("[BufferRaw]\0");
             (*this) << _nTick++ << " "
